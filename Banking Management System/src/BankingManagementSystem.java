@@ -145,6 +145,10 @@ public class BankingManagementSystem {
 
         private static int readInt (String message){
             System.out.print(message);
-            return Integer.parseInt(sc.nextLine().trim());
+            try {
+                return Integer.parseInt(sc.nextLine().trim());
+            } catch (NumberFormatException e) {
+                throw new BankingException("Enter a valid choice");
+            }
         }
 }
